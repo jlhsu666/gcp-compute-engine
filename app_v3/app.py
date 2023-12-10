@@ -15,14 +15,14 @@ from werkzeug.datastructures import CombinedMultiDict
 from gcloud import storage
 import uuid, tempfile, time
 
-#### Edit Here
-project_id = '<Your_Project_ID>'
+#### 編輯這裡
+project_id = '<您的專案ID>'
 dbuser = 'appuser'
 dbpass = 'pas4appuser'
-dbinstance = '<Your_Instance_Connection_Name>'
+dbinstance = '<您的實例連線名稱>'
 ####
 
-time.sleep(3) # Wait for cloudsqlproxy to start
+time.sleep(3) # 等待cloudsqlproxy啟動
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = \
     'mysql+pymysql://%s:%s@/message_db?unix_socket=/cloudsql/%s' % (dbuser, dbpass, dbinstance)
@@ -59,10 +59,10 @@ def is_image():
     return _is_image
 
 class MessageForm(Form):
-    input_name = StringField(u'お名前', [validators.Length(min=1, max=16)])
-    input_message = TextAreaField(u'メッセージ',
+    input_name = StringField(u'您的名字', [validators.Length(min=1, max=16)])
+    input_message = TextAreaField(u'留言內容',
                                   [validators.Length(min=1, max=1024)])
-    input_photo = FileField(u'画像添付(jpg, jpeg, png, gif)',
+    input_photo = FileField(u'附加圖片 (jpg, jpeg, png, gif)',
                             validators=[is_image()])
 
 @app.route('/')
