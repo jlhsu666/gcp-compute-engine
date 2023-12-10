@@ -9,7 +9,7 @@ import arrow
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import desc
 
-#### Edit Here
+#### 编辑此处
 dbuser = 'appuser'
 dbpass = 'pas4appuser'
 dbinstance = '<Your_Instance_Connection_Name>'
@@ -40,8 +40,8 @@ def linesep_to_br_filter(s):
     return escape(s).replace('\n', Markup('<br>'))
 
 class MessageForm(Form):
-    input_name = StringField(u'お名前', [validators.Length(min=1, max=16)])
-    input_message = TextAreaField(u'メッセージ',
+    input_name = StringField(u'您的姓名', [validators.Length(min=1, max=16)])
+    input_message = TextAreaField(u'留言内容',
                                   [validators.Length(min=1, max=1024)])
 
 @app.route('/')
