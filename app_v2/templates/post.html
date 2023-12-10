@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>伝言板</title>
+    <title>留言板</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="/static/css/bootstrap.css" media="screen">
@@ -11,17 +11,17 @@
 
 <body>
     {% from "_formhelpers.html" import render_field %}
-    <!-- Navbar-->
+    <!-- 導覽欄-->
     <div class="navbar navbar-default navbar-fixed-top"></div>
     <div class="container" style="padding:80px 0 0 0">
-        <!-- Main -->
+        <!-- 主要內容 -->
         <div class="jumbotron">
             <blockquote>
-                <p>{{ name }} さんからのメッセージを受け取りました</p>
+                <p>收到了來自 {{ name }} 先生/女士的留言</p>
                 <small>{{ timestamp }}</small>
             </blockquote>
             <form action={{ url_for( 'messages') }}>
-                <input class="btn btn-primary btn-lg" type=submit value='伝言板にもどる'>
+                <input class="btn btn-primary btn-lg" type=submit value='返回留言板'>
             </form>
         </div>
     </div>
